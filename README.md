@@ -21,7 +21,7 @@ In this project, we'll walk you through setting up a Ghost blog using Vagrant, D
 
 ### Updating the Hosts File
 
-To access the Ghost blog using http://example.site, you'll need to update your host machine's hosts file. Add the following line, replacing 192.168.0.X with the actual IP address of your Vagrant machine:
+To access the Ghost blog using `http://example.site`, you'll need to update your host machine's hosts file. Add the following line, replacing 192.168.0.X with the actual IP address of your Vagrant machine:
 
 ```
 192.168.0.X example.site
