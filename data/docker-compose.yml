@@ -1,0 +1,32 @@
+services:
+
+  ghost:
+    image: ghost:latest
+    container_name: ghost
+    restart: always
+    ports:
+      - 8080:2368
+    environment:
+      database__client: mysql
+      database__connection__host: db
+      database__connection__user: root
+      database__connection__password: example
+      database__connection__database: ghost
+      url: http://example.site
+    volumes:
+      - ./data/ghost:/var/lib/ghost/content
+    depends_on:
+      - db
+
+  db:
+    image: mysql:latest
+    container_name: mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+    volumes:
+      - ./data/db:/var/lib/mysql
+
+volumes:
+  ghost:
+  db:
